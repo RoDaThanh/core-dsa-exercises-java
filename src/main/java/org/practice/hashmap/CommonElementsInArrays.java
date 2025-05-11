@@ -2,7 +2,7 @@ package org.practice.hashmap;
 
 import java.util.*;
 
-public class WordFrequencyCounter {
+public class CommonElementsInArrays {
     /*
     * Requirement: Return elements that appear in both arrays.
     Example:
@@ -12,7 +12,7 @@ public class WordFrequencyCounter {
     Constraints:
 	•	Use a Set for fast lookup.
     * */
-    public static int[] counter(int[] firstArr, int[] secondArr) {
+    public static int[] findCommonElement(int[] firstArr, int[] secondArr) {
         if (isInvalidArrays(firstArr, secondArr)) {
             return new int[]{};
         }
