@@ -14,10 +14,6 @@ public class PreAndPostIncrement {
         list.add(2);
         list.add(3);
 
-        for (int i = 0; i < list.size(); i++) {
-            int res = list.get(i);
-            res = res++ + ++res;
-            System.out.println(res +"!!!");
-        }
+        list.forEach( i -> System.out.println(i++ + ++i + "!!!"));
     }
 }
