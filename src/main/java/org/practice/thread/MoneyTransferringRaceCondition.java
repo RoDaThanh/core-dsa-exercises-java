@@ -1,25 +1,30 @@
 package org.practice.thread;
 
-public class MoneyTransferring {
+public class MoneyTransferringRaceCondition {
     public static void main(String[] args) {
         var bank = new Bank(4, 100000);
 
         Runnable transferRunnable1 = () -> {
             try {
-                for (int i = 0; i < 5; i++) {
+                for (int i = 0; i < 100; i++) {
                     double amount = 1000 * Math.random();
-                    bank.transfer(0,1, amount);
+                    int from = 0;
+                    int to = (int) ( bank.size() * Math.random());
+                    bank.transfer(from,to, amount);
                     Thread.sleep((int) (10 * Math.random()));
                 }
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
         };
+
         Runnable transferRunnable2 = () -> {
             try {
-                for (int i = 0; i < 5; i++) {
-                    double amount = 10000 * Math.random();
-                    bank.transfer(2,3, amount);
+                for (int i = 0; i < 100; i++) {
+                    double amount = 1000 * Math.random();
+                    int from = 0;
+                    int to = (int) ( bank.size() * Math.random());
+                    bank.transfer(from,to, amount);
                     Thread.sleep((int) (10 * Math.random()));
                 }
             } catch (InterruptedException e) {
