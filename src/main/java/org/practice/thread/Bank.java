@@ -24,10 +24,8 @@ public class Bank {
 
         notifyAll();
 
-        System.out.printf(Thread.currentThread()+ "%10.2f from %d to %d", amount, from, to);
-        System.out.println();
-        System.out.printf("Total balance: %10.2f", getTotalBalance());
-        System.out.println();
+        System.out.printf(Thread.currentThread()+ "%10.2f from %d to %d%n", amount, from, to);
+        System.out.printf("Total balance: %10.2f%n", getTotalBalance());
 
     }
 
