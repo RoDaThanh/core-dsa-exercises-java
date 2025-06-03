@@ -16,6 +16,9 @@ public class RevertWord {
         String[] res = revertWord("The    quick brown fox jumped over a lazy dog");
         System.out.println(Arrays.toString(res));
 
+        Character[] res2 = revertWord(new Character[]{'T','h','e',' ','q','u','i','c','k',' ','b','r','o','w','n'});
+        System.out.println(Arrays.toString(res2));
+
     }
 
     public static String[] revertWord(String sentence) {
@@ -29,5 +32,31 @@ public class RevertWord {
             rightIndex--;
         }
         return words;
+    }
+
+    public static Character[] revertWord(Character[] sentence) {
+        revertWord(sentence, 0, sentence.length);
+        int wordBeginingSapce = 0;
+        for (int i = 0; i < sentence.length; i++ ) {
+            if (sentence[i] == ' ') {
+                revertWord(sentence, wordBeginingSapce, i);
+                wordBeginingSapce = i + 1;
+            }
+            if (i == sentence.length - 1) {
+                revertWord(sentence, wordBeginingSapce, i + 1);
+            }
+        }
+        return sentence;
+    }
+
+    public static void revertWord(Character[] sentence, int from, int to) {
+        int rightIndex = to - 1;
+        char temp;
+        for (int i = from; i < (from+to)/2; i++ ) {
+            temp = sentence[i];
+            sentence[i] = sentence[rightIndex];
+            sentence[rightIndex] = temp;
+            rightIndex--;
+        }
     }
 }
