@@ -1,5 +1,8 @@
 package org.practice.core;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class Operations {
     public static void main(String[] args) {
 //        int i = 8;
@@ -16,5 +19,9 @@ public class Operations {
             }
             System.out.println(i);
         }
+
+        boolean[] n2 = new boolean[-200];
+        Set<Integer> a = new HashSet<>();
+        Integer[] b = new Integer[10];
     }
 }
