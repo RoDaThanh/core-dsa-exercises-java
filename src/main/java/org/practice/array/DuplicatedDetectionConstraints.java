@@ -12,15 +12,15 @@ public class DuplicatedDetectionConstraints {
     Example Output: true
     * */
     public static void main(String[] args) {
-//        System.out.println(duplicateDetection(new int[] {3,5}, 1));
-//        System.out.println(duplicateDetection2(new int[] {1, 2, 3, 1}, 5));
-//        System.out.println(duplicateDetection2(new int[] {1, 2, 3, 1}, 3)); // true
-//        System.out.println(duplicateDetection2(new int[] {1, 2, 3, 4}, 3)); // false
+        System.out.println(duplicateDetection(new int[] {3,5}, 1));
+        System.out.println(duplicateDetection2(new int[] {1, 2, 3, 1}, 5));
+        System.out.println(duplicateDetection2(new int[] {1, 2, 3, 1}, 3)); // true
+        System.out.println(duplicateDetection2(new int[] {1, 2, 3, 4}, 3)); // false
         System.out.println(duplicateDetection2(new int[] {1, 0, 1, 1}, 1)); // true
-//        System.out.println(duplicateDetection2(new int[] {}, 1));            // false
-//        System.out.println(duplicateDetection2(new int[] {1}, 1));           // false
-//        System.out.println(duplicateDetection2(new int[] {1, 2, 3, 1}, 0));  // false
-//        System.out.println(duplicateDetection2(new int[] {99, 88, 77, 99}, 10)); // true
+        System.out.println(duplicateDetection2(new int[] {}, 1));            // false
+        System.out.println(duplicateDetection2(new int[] {1}, 1));           // false
+        System.out.println(duplicateDetection2(new int[] {1, 2, 3, 1}, 0));  // false
+        System.out.println(duplicateDetection2(new int[] {99, 88, 77, 99}, 10)); // true
     }
 
     public static boolean duplicateDetection(int[] nums, int k) {
