@@ -15,8 +15,8 @@ Example Output: 3 (substring "abc")
         System.out.println(process(""));
     }
 
-    public static String process(String input) {
-        String longestSub = "";
+    public static int process(String input) {
+        int longestSub = 0;
         StringBuilder currentSubString = new StringBuilder();
 
         for (Character ch : input.toCharArray()) {
@@ -28,8 +28,8 @@ Example Output: 3 (substring "abc")
             }
 
             currentSubString.append(temp);
-            if (longestSub.length() < currentSubString.length()) {
-                longestSub = currentSubString.toString();
+            if (longestSub < currentSubString.length()) {
+                longestSub = currentSubString.length();
             }
         }
         return longestSub;
